@@ -9,18 +9,19 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
     cin>>m>>t;
-    for(int i=0;i<t;i++)
+    arr[0].first=arr[0].second=0;
+    for(int i=1;i<=t;i++)
     {
         cin>>arr[i].first>>arr[i].second;
     }
     sort(arr,arr+t);
-    for(int i=0;i<t;i++)
+    for(int i=0;i<=t;i++)
     {
-        for(int j=m;j>=0;j--)
+        for(int j=0;j<=i;j++)
         {
-            if(j<=arr[i].first)
+            if(arr[j].second<=arr[i].first)
             {
-                dp[arr[i].second]=max(dp[arr[i].second],dp[j]+(arr[i].second-arr[i].first));
+                dp[arr[i].second]=max(dp[arr[i].second],dp[arr[j].second]+(arr[i].second-arr[i].first));
             }
         }
     }
