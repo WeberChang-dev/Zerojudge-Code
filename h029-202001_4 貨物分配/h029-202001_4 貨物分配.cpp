@@ -50,9 +50,8 @@ int main() {
     FastIO
     input();
     DFS_build(1);
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i++)
         DFS_modify(1, queries[i]);
-    }
     return 0;
 }
  
